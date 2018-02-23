@@ -14,9 +14,11 @@ Tipo: {{ galaxy.get_consensus_type_display }}
 
 {% else %}
 
-bem vindo ao tutorial!
+{% include "tutorial.txt" %}
 
+<p>
 <a href="tutorial?image_num=0"> Começar! </a>
+</p>
 
 {% endif %}
 
