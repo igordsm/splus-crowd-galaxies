@@ -39,6 +39,8 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_content')
 MEDIA_URL = '/raw_images/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Application definition
 
 INSTALLED_APPS = [
