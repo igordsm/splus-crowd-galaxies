@@ -22,7 +22,7 @@ class ImageClassifications(admin.TabularInline):
     model = GalaxyClassification
     extra = 0
     can_delete = True
-    readonly_fields = ('user', 'galaxy_type')
+    #readonly_fields = ('user', 'galaxy_type')
     
 
 class GalaxyImageAdmin(admin.ModelAdmin):

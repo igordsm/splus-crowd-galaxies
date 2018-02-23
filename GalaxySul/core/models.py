@@ -40,7 +40,7 @@ class GalaxyImage(models.Model):
     def consensus_type(self):
         types = GalaxyClassification.objects.filter(image=self)
         counts = [types.filter(galaxy_type=t[0]).count() for t in GALAXY_TYPES]
-        consensus_type = max(enumerate(counts))[1]
+        consensus_type = max(enumerate(counts), key=lambda t: t[1])[0]
         return consensus_type
     
     @property
