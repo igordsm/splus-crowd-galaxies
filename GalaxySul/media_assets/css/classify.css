@@ -1,0 +1,16 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.content .errorlist {
+    display: none;
+}
+
+.content img {
+    flex-grow: 2;
+    max-height: 300px;
+    max-width: 300px;
+    
+}

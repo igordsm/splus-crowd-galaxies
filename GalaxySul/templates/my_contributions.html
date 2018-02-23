@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+    <head>
+        <title> {% block title %} Galaxy Sul? {% endblock %} </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{% static 'css/classify.css' %}">
+    </head>
+
+    <body>
+            <div class="content">
+                Total de Galáxias classificadas: {{ images_classified }}
+            </div>
+    </body>
+</html>

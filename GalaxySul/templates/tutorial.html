@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if request.GET.image_num %}
+
+<img src="{{ galaxy.image.url }}">
+
+Tipo: {{ galaxy.get_consensus_type_display }}
+
+<a href="tutorial?image_num={{ next }}"> Continuar! </a>
+
+{% else %}
+
+bem vindo ao tutorial!
+
+<a href="tutorial?image_num=0"> Começar! </a>
+
+{% endif %}
+
+{% endblock %}

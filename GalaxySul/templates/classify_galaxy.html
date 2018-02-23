@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+    <head>
+        <title> {% block title %} Galaxy Sul? {% endblock %} </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{% static 'css/classify.css' %}">
+    </head>
+
+
+<body>
+    <div class="content">
+        {% if no_galaxy %}
+            <p>Você já classificou todas as imagens disponíveis! </p><br>
+            <center>Muito obrigado!</center>
+        {% else %}
+            <img src="{{ galaxy.image.url }}">
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="hidden" name="galaxy_id" value="{{galaxy.id}}">
+                <input type="submit" value="Submit">
+            </form>
+        {% endif %}
+    </div>
+    
+
+</body>
+</html>

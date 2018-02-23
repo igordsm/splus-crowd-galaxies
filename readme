@@ -1,0 +1,15 @@
+Algumas dicas de como usar os dados de astronomia para fazer um Galaxy Zoo 
+do SPLUS
+
+http://docs.astropy.org/en/stable/io/fits/
+http://www.astropy.org/astropy-tutorials/FITS-images.html
+
+Selecionar galáxias (tipo 6) com R < 12.00 com algum tamanho mínimo (que não 
+entendi ainda). no fits isso é 1500
+
+Começar com imagens da Ariana -> preencher banco de dados e depois se preocupar
+com código de recorte e coloração.
+
+Precisa ser em Pt-BR e EN-US
+
+

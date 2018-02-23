@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %} 
+    <script type="text/javascript" src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}        
+
+{% block content %}
+<section class="main-content-dash container box feature1">
+    <div class="left-menu">
+        <section>
+            <a href="javascript:show_tab('classify');">
+                <header class="second icon fa-star">
+                    <h3> Classificar galáxias </h3>
+                </header>
+            </a>    
+        </section>
+
+        <section>
+            <a href="javascript:show_tab('my-contributions');">
+                <header class="second icon fa-edit">
+                    <h3>Minhas contribuições</h3>
+                </header>
+            </a>
+        </section>
+        
+        <section>
+            <a href="javascript:show_tab('project-status');">
+                <header class="second icon fa-bar-chart-o">
+                    <h3>Status do projeto</h3>
+                </header>
+            </a>
+            
+        </section>
+
+    </div>
+
+    <section class="tabs">
+        <div id="classify-tab">
+            <iframe src="/classify" width="100%" height="100%">
+            </iframe>
+        </div>
+
+        <div  id="my-contributions-tab">
+            <iframe src="/my_contributions" width="100%" height="100%">
+            </iframe>
+        </div>
+
+        <div id="project-status-tab">
+            <iframe src="/project_status" width="100%" height="100%">
+            </iframe>
+        </div>
+    </section>
+
+</section>
+{% endblock %}
