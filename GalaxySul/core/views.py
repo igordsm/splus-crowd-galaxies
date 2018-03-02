@@ -26,7 +26,7 @@ def signup(request):
             pwd = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=pwd)
             login(request, user)
-            return redirect('core:dashboard')
+            return redirect('core:classify_image')
     else: 
         form = UserCreationForm()
     return  render(request, 'signup.html', {'form': form})
@@ -92,7 +92,7 @@ def tutorial(request):
             request.user.profile.completed_tutorial = True
             request.user.profile.save()
             messages.add_message(request, messages.INFO, 'Você completou o tutorial!')
-            return redirect('core:dashboard')        
+            return redirect('core:classify')        
         
         return render(request, 'tutorial.html', {'galaxy': image[image_num], 'next': image_num+1})
     else:

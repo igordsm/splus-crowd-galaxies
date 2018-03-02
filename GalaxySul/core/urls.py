@@ -11,5 +11,5 @@ urlpatterns = [
     url('^accounts/signup/?', signup, name='signup'),
     
     url('^tutorial/?', tutorial, name='tutorial'),
-    url(r'^$', index),
+    url(r'^$', index, name='index'),
 ]
