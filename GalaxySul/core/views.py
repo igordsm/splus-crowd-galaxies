@@ -32,12 +32,6 @@ def signup(request):
     return  render(request, 'signup.html', {'form': form})
 
 
-@login_required
-def user_dashboard(request):
-    if request.user.profile.completed_tutorial:
-        return render(request, 'dashboard.html')
-    return redirect('core:tutorial')
-    
 
 class ClassificationForm(ModelForm):
     class Meta:
@@ -47,6 +41,10 @@ class ClassificationForm(ModelForm):
 
 @login_required
 def classify_image(request):
+    if request.user.profile.completed_tutorial == False:
+        return redirect('core:tutorial')
+
+
     if request.method == 'GET':
         my_images = GalaxyClassification.objects.filter(user=request.user)
         images_to_classify = GalaxyImage.objects.exclude(tutorial_image=True).exclude(id__in=my_images.values_list('image', flat=True)).filter(is_consensus=False)

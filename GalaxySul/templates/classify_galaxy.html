@@ -1,13 +1,11 @@
+{% extends "base.html" %}
 {% load static %}
-<html>
-    <head>
-        <title> {% block title %} Galaxy Sul? {% endblock %} </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+{% block extra_css %}
         <link rel="stylesheet" href="{% static 'css/classify.css' %}">
-    </head>
+{% endblock %}
 
-
-<body>
+{% block content %}
     <div class="content">
         {% if no_galaxy %}
             <p>Você já classificou todas as imagens disponíveis! </p><br>
@@ -23,7 +21,4 @@
             </form>
         {% endif %}
     </div>
-    
-
-</body>
-</html>
+{% endblock %}

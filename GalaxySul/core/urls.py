@@ -1,6 +1,6 @@
 
 from django.conf.urls import url, include
-from core.views import index, classify_image, signup, user_dashboard, my_contributions, project_status, tutorial
+from core.views import index, classify_image, signup, my_contributions, project_status, tutorial
 
 app_name = 'core'
 urlpatterns = [
@@ -10,7 +10,6 @@ urlpatterns = [
 
     url('^accounts/signup/?', signup, name='signup'),
     
-    url('^dashboard/?', user_dashboard, name='dashboard'),
     url('^tutorial/?', tutorial, name='tutorial'),
     url(r'^$', index),
 ]
